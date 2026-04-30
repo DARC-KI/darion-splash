@@ -1,0 +1,20 @@
+# Cloudflare Pages Headers — https://developers.cloudflare.com/pages/configuration/headers/
+
+# Matrix Federation Discovery (KRITISCH — siehe Konzept §3)
+/.well-known/matrix/server
+  Content-Type: application/json
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=3600
+
+/.well-known/matrix/client
+  Content-Type: application/json
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=3600
+
+# Security Headers für alles andere
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://*.darion.ai; connect-src 'self' https://*.darion.ai; font-src 'self' data:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'

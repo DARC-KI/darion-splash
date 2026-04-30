@@ -1,0 +1,77 @@
+---
+---
+
+<section class="hero" aria-labelledby="brand-mark">
+  <p class="brand-eyebrow">DARION AI</p>
+  <h1 id="brand-mark" class="wordmark">
+    <span class="wordmark-text">DARION</span>
+  </h1>
+  <p class="claim">
+    Die KI-native Plattform für<br />
+    <strong>KMU-Beratung &amp; Service.</strong>
+  </p>
+  <p class="sub-claim">
+    Mandantensicher · EU-gehostet · DSGVO-konform
+  </p>
+</section>
+
+<style>
+  .hero {
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .brand-eyebrow {
+    margin: 0 0 1.25rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    color: var(--fg-subtle);
+    text-transform: uppercase;
+  }
+
+  .wordmark {
+    margin: 0;
+    font-size: clamp(3rem, 12vw, 7.5rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+    background: linear-gradient(180deg, #ffffff 0%, #a3a3a3 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .wordmark-text {
+    display: inline-block;
+  }
+
+  .claim {
+    margin: 1.5rem auto 0.75rem;
+    max-width: 32rem;
+    font-size: clamp(1.125rem, 2.4vw, 1.5rem);
+    line-height: 1.35;
+    color: var(--fg);
+    font-weight: 400;
+  }
+
+  .claim strong {
+    font-weight: 600;
+    color: var(--fg);
+  }
+
+  .sub-claim {
+    margin: 0;
+    font-size: 0.9375rem;
+    color: var(--fg-muted);
+    font-weight: 400;
+  }
+
+  @media (max-width: 480px) {
+    .brand-eyebrow {
+      font-size: 0.6875rem;
+      letter-spacing: 0.16em;
+    }
+  }
+</style>

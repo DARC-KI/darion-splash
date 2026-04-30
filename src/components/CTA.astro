@@ -1,0 +1,72 @@
+---
+const target = "https://landing.darion-ai.de/?utm_source=darion-ai&utm_medium=splash&utm_campaign=brand-anchor";
+---
+
+<section class="cta">
+  <a class="cta-button" href={target} rel="noopener">
+    <span class="cta-label">Mehr erfahren</span>
+    <span class="cta-arrow" aria-hidden="true">→</span>
+  </a>
+  <p class="cta-target" aria-hidden="true">landing.darion-ai.de</p>
+</section>
+
+<style>
+  .cta {
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.9rem 1.6rem;
+    border: 1px solid var(--fg);
+    border-radius: 999px;
+    background: var(--fg);
+    color: var(--bg);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    text-decoration: none;
+    transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+    will-change: transform;
+  }
+
+  .cta-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px -8px rgba(255, 255, 255, 0.2);
+  }
+
+  .cta-button:active {
+    transform: translateY(0);
+  }
+
+  .cta-arrow {
+    display: inline-block;
+    transition: transform 120ms ease;
+  }
+
+  .cta-button:hover .cta-arrow {
+    transform: translateX(3px);
+  }
+
+  .cta-target {
+    margin: 0.85rem 0 0;
+    font-size: 0.8125rem;
+    color: var(--fg-subtle);
+    letter-spacing: 0.01em;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta-button, .cta-arrow {
+      transition: none;
+    }
+    .cta-button:hover {
+      transform: none;
+    }
+    .cta-button:hover .cta-arrow {
+      transform: none;
+    }
+  }
+</style>

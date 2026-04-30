@@ -1,0 +1,76 @@
+---
+const anchors = [
+  {
+    title: "EU-Hosting",
+    sub: "Hetzner Frankfurt &amp; Nürnberg",
+  },
+  {
+    title: "Multi-Tenant",
+    sub: "PostgreSQL Row-Level Security",
+  },
+  {
+    title: "KI-nativ",
+    sub: "Open-Source LLMs &amp; Voice-ready",
+  },
+];
+---
+
+<section class="trust" aria-label="Trust-Anker">
+  <ul class="trust-list">
+    {anchors.map(({ title, sub }) => (
+      <li class="trust-item">
+        <span class="trust-title">{title}</span>
+        <span class="trust-sub" set:html={sub} />
+      </li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  .trust {
+    margin: 0 auto;
+    padding: 0 1rem;
+    width: 100%;
+    max-width: 44rem;
+  }
+
+  .trust-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .trust-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0.005));
+  }
+
+  .trust-title {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    color: var(--fg);
+  }
+
+  .trust-sub {
+    margin-top: 0.25rem;
+    font-size: 0.8125rem;
+    color: var(--fg-muted);
+    line-height: 1.35;
+  }
+
+  @media (max-width: 600px) {
+    .trust-list {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
