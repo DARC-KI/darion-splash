@@ -2,16 +2,18 @@
 ---
 
 <section class="hero" aria-labelledby="brand-mark">
-  <p class="brand-eyebrow">DARION AI</p>
-  <h1 id="brand-mark" class="wordmark">
-    <span class="wordmark-text">DARION</span>
-  </h1>
-  <p class="claim">
-    Die KI-native Plattform für<br />
-    <strong>KMU-Beratung &amp; Service.</strong>
+  <p class="eyebrow">
+    <span class="dot" aria-hidden="true"></span>
+    Soft Launch am 20. Mai 2026
   </p>
-  <p class="sub-claim">
-    Mandantensicher · EU-gehostet · DSGVO-konform
+  <h1 id="brand-mark" class="headline">
+    Sichere KI für<br />
+    <span class="accent">dein Unternehmen</span>
+  </h1>
+  <p class="lead">
+    Neun Module von Finanzen bis KI-Telefonie in einer Plattform.
+    Komplett auf Servern in Deutschland.
+    <span class="emph">Kein Token verlässt deine Infrastruktur.</span>
   </p>
 </section>
 
@@ -19,59 +21,66 @@
   .hero {
     text-align: center;
     padding: 0 1rem;
+    max-width: 56rem;
+    margin: 0 auto;
   }
 
-  .brand-eyebrow {
-    margin: 0 0 1.25rem;
-    font-size: 0.75rem;
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 0 1.5rem;
+    padding: 0.4rem 0.9rem;
+    border: 1px solid var(--border-soft);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.02);
+    font-size: 0.8125rem;
     font-weight: 500;
-    letter-spacing: 0.18em;
-    color: var(--fg-subtle);
-    text-transform: uppercase;
+    color: var(--fg-muted);
+    letter-spacing: 0.005em;
   }
 
-  .wordmark {
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 8px var(--accent);
+  }
+
+  .headline {
     margin: 0;
-    font-size: clamp(3rem, 12vw, 7.5rem);
-    font-weight: 800;
-    letter-spacing: -0.04em;
-    line-height: 0.95;
-    background: linear-gradient(180deg, #ffffff 0%, #a3a3a3 100%);
+    font-size: clamp(2.5rem, 8vw, 5.5rem);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1.02;
+    color: var(--fg);
+  }
+
+  .accent {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-deep) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
   }
 
-  .wordmark-text {
-    display: inline-block;
-  }
-
-  .claim {
-    margin: 1.5rem auto 0.75rem;
-    max-width: 32rem;
-    font-size: clamp(1.125rem, 2.4vw, 1.5rem);
-    line-height: 1.35;
-    color: var(--fg);
-    font-weight: 400;
-  }
-
-  .claim strong {
-    font-weight: 600;
-    color: var(--fg);
-  }
-
-  .sub-claim {
-    margin: 0;
-    font-size: 0.9375rem;
+  .lead {
+    margin: 1.5rem auto 0;
+    max-width: 38rem;
+    font-size: clamp(1rem, 1.6vw, 1.1875rem);
+    line-height: 1.55;
     color: var(--fg-muted);
     font-weight: 400;
   }
 
+  .emph {
+    color: var(--fg);
+    font-weight: 500;
+  }
+
   @media (max-width: 480px) {
-    .brand-eyebrow {
-      font-size: 0.6875rem;
-      letter-spacing: 0.16em;
-    }
+    .eyebrow { font-size: 0.75rem; }
+    .headline { letter-spacing: -0.025em; }
   }
 </style>

@@ -3,30 +3,53 @@ const year = new Date().getFullYear();
 ---
 
 <footer class="footer">
+  <p class="brand-line">
+    <span class="brand">DARION AI</span>
+    <span class="sep" aria-hidden="true">·</span>
+    <span class="tagline">KI-Plattform für den deutschen Mittelstand</span>
+  </p>
   <nav class="footer-nav" aria-label="Rechtliches">
     <a href="https://landing.darion-ai.de/impressum" rel="noopener">Impressum</a>
     <span class="sep" aria-hidden="true">·</span>
     <a href="https://landing.darion-ai.de/datenschutz" rel="noopener">Datenschutz</a>
+    <span class="sep" aria-hidden="true">·</span>
+    <span class="copy">© {year} DARC Management UG</span>
   </nav>
-  <p class="copy">© {year} DARION</p>
 </footer>
 
 <style>
   .footer {
     text-align: center;
-    padding: 1.5rem 1rem 2rem;
+    padding: 2rem 1rem 2.5rem;
     color: var(--fg-subtle);
     font-size: 0.8125rem;
   }
 
+  .brand-line {
+    margin: 0 0 0.5rem;
+    color: var(--fg-soft);
+  }
+
+  .brand {
+    font-weight: 600;
+    color: var(--fg-muted);
+    letter-spacing: 0.005em;
+  }
+
+  .tagline {
+    color: var(--fg-subtle);
+  }
+
   .footer-nav {
     display: inline-flex;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
   }
 
   .footer-nav a {
-    color: var(--fg-muted);
+    color: var(--fg-soft);
     text-decoration: none;
     transition: color 120ms ease;
   }
@@ -38,11 +61,10 @@ const year = new Date().getFullYear();
   }
 
   .sep {
-    color: var(--border);
+    color: var(--border-soft);
   }
 
   .copy {
-    margin: 0.4rem 0 0;
     color: var(--fg-subtle);
   }
 </style>

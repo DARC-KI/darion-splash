@@ -1,13 +1,20 @@
 ---
-const target = "https://landing.darion-ai.de/?utm_source=darion-ai&utm_medium=splash&utm_campaign=brand-anchor";
+const utm = "utm_source=darion-ai&utm_medium=splash&utm_campaign=brand-anchor";
+const primary = `https://landing.darion-ai.de/?${utm}`;
+const secondary = `https://landing.darion-ai.de/?${utm}#module`;
 ---
 
 <section class="cta">
-  <a class="cta-button" href={target} rel="noopener">
-    <span class="cta-label">Mehr erfahren</span>
-    <span class="cta-arrow" aria-hidden="true">→</span>
-  </a>
-  <p class="cta-target" aria-hidden="true">landing.darion-ai.de</p>
+  <div class="cta-row">
+    <a class="btn-primary" href={primary} rel="noopener">
+      <span>Platz auf der Waitlist sichern</span>
+      <span class="arrow" aria-hidden="true">→</span>
+    </a>
+    <a class="btn-ghost" href={secondary} rel="noopener">
+      Module ansehen
+    </a>
+  </div>
+  <p class="target" aria-hidden="true">landing.darion-ai.de</p>
 </section>
 
 <style>
@@ -16,57 +23,82 @@ const target = "https://landing.darion-ai.de/?utm_source=darion-ai&utm_medium=sp
     padding: 0 1rem;
   }
 
-  .cta-button {
+  .cta-row {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .btn-primary,
+  .btn-ghost {
     display: inline-flex;
     align-items: center;
-    gap: 0.6rem;
-    padding: 0.9rem 1.6rem;
-    border: 1px solid var(--fg);
+    gap: 0.5rem;
+    padding: 0.85rem 1.5rem;
     border-radius: 999px;
-    background: var(--fg);
-    color: var(--bg);
-    font-size: 1rem;
+    font-size: 0.9375rem;
     font-weight: 600;
     letter-spacing: -0.005em;
     text-decoration: none;
-    transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+    transition: transform 140ms ease, box-shadow 140ms ease,
+      background 140ms ease, border-color 140ms ease;
     will-change: transform;
   }
 
-  .cta-button:hover {
+  .btn-primary {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-deep) 100%);
+    color: var(--fg);
+    border: 1px solid transparent;
+    box-shadow: 0 8px 32px -10px rgba(113, 112, 255, 0.5);
+  }
+
+  .btn-primary:hover {
     transform: translateY(-1px);
-    box-shadow: 0 8px 24px -8px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 12px 40px -8px rgba(113, 112, 255, 0.6);
   }
 
-  .cta-button:active {
-    transform: translateY(0);
+  .btn-ghost {
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--fg);
+    border: 1px solid var(--border-soft);
   }
 
-  .cta-arrow {
+  .btn-ghost:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(113, 112, 255, 0.4);
+    transform: translateY(-1px);
+  }
+
+  .arrow {
     display: inline-block;
-    transition: transform 120ms ease;
+    transition: transform 140ms ease;
   }
 
-  .cta-button:hover .cta-arrow {
+  .btn-primary:hover .arrow {
     transform: translateX(3px);
   }
 
-  .cta-target {
-    margin: 0.85rem 0 0;
+  .target {
+    margin: 1rem 0 0;
     font-size: 0.8125rem;
     color: var(--fg-subtle);
-    letter-spacing: 0.01em;
+    letter-spacing: 0.005em;
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .cta-button, .cta-arrow {
-      transition: none;
+    .btn-primary, .btn-ghost, .arrow { transition: none; }
+    .btn-primary:hover, .btn-ghost:hover { transform: none; }
+    .btn-primary:hover .arrow { transform: none; }
+  }
+
+  @media (max-width: 480px) {
+    .cta-row {
+      flex-direction: column;
+      width: 100%;
     }
-    .cta-button:hover {
-      transform: none;
-    }
-    .cta-button:hover .cta-arrow {
-      transform: none;
+    .btn-primary, .btn-ghost {
+      justify-content: center;
     }
   }
 </style>
